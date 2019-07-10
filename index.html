@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Vivek">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="theme-color" content="#2196F3">
+
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<meta name="title" content="Top 20 Headlines">
+	<meta name="description" content="Get the latest top 20 news around the world, Business, Sports, Entertainment, Health, Science">
+	<meta name="keywords" content="news Headlines, latest news, top news,Headlines,world news, what's happening">
+
+	<meta property="og:url" content="http://20news.co.nf/">
+	<meta property="og:title" content="20 News" >
+	<meta property="og:description" content="Get the latest top 20 news around the world, Business, Sports, Entertainment, Health, Science" >
+    <meta property="og:image" content=".res/img/20news.png" >
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="res/style/mystyle.css" type="text/css">
+    <link rel="icon" href="./20news.png"/>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <title>Top 20 News</title>
+</head>
+
+<body onload="GetNewsData('general'); getCountry()" style="background-color: #141d26">
+
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-primary main-nav mb-4">
+        <div class="container-fluid">
+
+            <a id="brand" class="navbar-brand" href="index.html">Twenty
+                <strong> Headlines</strong>
+            </a>
+
+
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#general" onclick="GetNewsData('general')">General</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#business" onclick="GetNewsData('business')">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#entertainment" onclick="GetNewsData('entertainment')">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#health" onclick="GetNewsData('health')">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#science" onclick="GetNewsData('science')">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sports" onclick="GetNewsData('sports')">Sports</a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Dropdown -->
+
+
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Choose Country
+
+                    </button>
+                    <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ar')">Argentina</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('au')">Australia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('at')">Austria</a>                                
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('be')">Belgium</a>                                
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('br')">Brazil</a>                               
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ca')">Canada</a>                                                                                                                   
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('cn')">China</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('co')">Colombia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('cu')">Cuba</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('cz')">Czech Republic</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('eg')">Egypt</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('fr')">France</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('de')">Germany</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('gr')">Greece</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('hk')">Hong Kong</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('hu')">Hungary</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('in')">India</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('id')">Indonesia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ie')">Ireland</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('il')">Israel</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('it')">Italy</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('jp')">Japan</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('lt')">Lithuania</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('my')">Malaysia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('mx')">Mexico</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ma')">Morocco</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('nl')">Netherlands</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('nl')">New Zealand</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ng')">Nigeria</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('no')">Norway</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ph')">Philippines</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('pl')">Poland</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('pt')">Portugal</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ro')">Romania</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ru')">Russia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('sa')">Saudi Arabia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('rs')">Serbia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('sg')">Singapore</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('sk')">Slovakia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('si')">Slovenia</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('za')">South Africa</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('kr')">South Korea</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('se')">Sweden</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ch')">Switzerland</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('tw')">Taiwan</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('th')">Thailand</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('tr')">Turkey</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ae')">UAE</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ua')">Ukraine</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('gb')">United Kingdom</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('us')">United States</a>
+                            <a class="dropdown-item" href="#" onclick="getCountryCode('ve')">Venuzuela</a>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <div id="results"></div>
+
+   
+    
+    <div class="footer-copyright text-center py-3" style="color: #d7d9db">Powered by
+        <a href="https://newsapi.org/"> newsapi.org</a>
+    </div>
+    
+
+
+    <script src="res/js/app.js"></script>
+
+</body>
+
+</html>
